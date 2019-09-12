@@ -47,6 +47,7 @@ module.exports = (grunt) ->
 
             livereload:
                 options:
+                    hostname: 'localhost'
                     port: 9000
                     base: '.'
                     open: true
