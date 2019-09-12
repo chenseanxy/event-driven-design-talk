@@ -1,0 +1,10 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Event Driven Design Pattern",
+    "packageVersion": "0.0.1",
+    "useSass": true,
+    "deployToGithubPages": true,
+    "githubUsername": "chenseanxy",
+    "githubRepository": "event-driven-design-pattern"
+  }
+}
