@@ -1,0 +1,32 @@
+
+<section class="center">
+    <h2>Introduction</h2>
+
+    <p>What is a event loop?</p>
+
+</section>
+
+<section data-state="el-blocking">
+    <h2 style="text-align: left;">Introduction</h2>
+
+    <p style="text-align: left; margin: 50px auto;">In console apps:</p>
+
+    <pre><code>
+        sleep(5); //Wait for 5 secs
+    </code></pre>
+
+    <container class="fragment fade">
+        <p>Demo 1: Blocking Main Thread</p>
+        <button id="el-blocking-btn" type="button">Wait for 5 seconds</button>
+        <button id="el-blocking-reset" type="button">Reset</button>
+        <p id="el-blocking-res">Not started</p>
+    </container>
+
+    <container class="fragment fade">
+        <div id="el-blocking-anim" class="demobox"></div>
+        <button id="el-blocking-anim-btn" type="button">Start animation</button>
+        <button id="el-blocking-anim-stop" type="button">Stop</button>
+    </container>
+
+</section>
+

@@ -1,10 +1,4 @@
-
+<!-- .slide: class="center" -->
 # Event Driven Design Pattern
 
-From the terminal, pop in:
-
-  ```yo reveal:slide "Slide Title"```
-
-Available options:
-
- ```--markdown --attributes --notes```
+Presentation for SA course / Chen Xinyang

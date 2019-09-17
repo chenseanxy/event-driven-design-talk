@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "reveal.js": "~3.3.0",
-    "highlightjs": "~9.0.0"
+    "highlightjs": "~9.0.0",
+    "bootstrap": "~4.3.0",
+    "jquery": "~3.4.0"
   }
 }

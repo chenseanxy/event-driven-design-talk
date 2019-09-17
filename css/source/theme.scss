@@ -51,3 +51,50 @@ section.has-light-background {
 // Theme template ------------------------------
 @import "../../bower_components/reveal.js/css/theme/template/theme";
 // ---------------------------------------------
+
+.reveal{
+    & pre{
+        width: 80%;
+        margin: 100px auto;
+        font-size: 1.0em;
+        line-height: 1.4em;
+
+        & code{
+            padding: 20px;
+            border-radius: 15px;
+        }
+    }
+    & code{
+        font-family: "Consolas";
+    }
+}
+
+$dullBackground: #3f3f3f;
+$dullForeground: #dcdcdc;
+
+button{
+    font-size: 0.8em;
+    padding: 20px 40px;
+    margin: 10px 20px;
+	display: inline-block;
+	border-radius: 10px;
+	background: $dullBackground;
+	color: $dullForeground;
+}
+
+container{
+    background: $dullBackground;
+    width: 78%;
+    margin: $blockMargin auto;
+    padding: 20px;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+}
+
+.demobox{
+    width: 100px;
+    height: 100px;
+    background: $dullForeground;
+    border-radius: 10px;
+}

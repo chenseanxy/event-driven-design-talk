@@ -285,3 +285,39 @@ body {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+.reveal pre {
+  width: 80%;
+  margin: 100px auto;
+  font-size: 1.0em;
+  line-height: 1.4em; }
+  .reveal pre code {
+    padding: 20px;
+    border-radius: 15px; }
+
+.reveal code {
+  font-family: "Consolas"; }
+
+button {
+  font-size: 0.8em;
+  padding: 20px 40px;
+  margin: 10px 20px;
+  display: inline-block;
+  border-radius: 10px;
+  background: #3f3f3f;
+  color: #dcdcdc; }
+
+container {
+  background: #3f3f3f;
+  width: 78%;
+  margin: 20px auto;
+  padding: 20px;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+.demobox {
+  width: 100px;
+  height: 100px;
+  background: #dcdcdc;
+  border-radius: 10px; }
