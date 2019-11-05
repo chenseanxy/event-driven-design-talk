@@ -1,5 +1,5 @@
 {
-  "name": "event-driven-design-pattern",
+  "name": "reactor-design-pattern-talk",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
@@ -12,16 +12,21 @@
     "load-grunt-tasks": "^3.5.2",
     "grunt-build-control": "^0.7.1",
     "grunt-coffeelint": "0.0.16",
-    "coffeelint": "^1.16.0"
+    "coffeelint": "^1.16.0",
+    "@types/gsap": "^1.20.2",
+    "@types/reveal": "^3.3.33"
   },
   "engines": {
     "node": ">=4"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:chenseanxy/event-driven-design-pattern.git"
+    "url": "https://github.com/chenseanxy/reactor-design-pattern-talk.git"
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "gsap": "^2.1.3"
   }
 }
