@@ -9,7 +9,7 @@
 
         let text = document.getElementById('timeConsuming');
 
-        timeline.to(text, 0.5, {fontSize: 75, fontWeight: 'bold'});
+        timeline.to(text, 0.5, {fontSize: 75, fontWeight: 'bold', ease: Expo.easeInOut});
 
     }, false);
 

@@ -352,7 +352,7 @@ container {
   .eventloop .thread {
     background: #3f3f3f;
     width: 38%;
-    height: auto;
+    margin-right: 30px;
     padding: 50px 100px;
     border-radius: 15px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
