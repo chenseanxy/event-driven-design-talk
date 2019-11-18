@@ -93,6 +93,86 @@ container{
     box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
 }
 
+.left{
+    text-align: left;
+}
+
+.space{
+    margin-top: 100px;
+}
+
+.eventloop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px !important;
+
+    & .queue{
+        width: 200%;
+        background: $dullBackground;
+        border-radius: 15px;
+        box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+        padding: 20px 50px;
+        margin-bottom: 50px;
+        display: flex;
+
+        & .item{
+            margin-left: 20px;
+            padding: 20px 40px;
+            background: $dullForeground;
+            color: $dullBackground;
+            border-radius: 15px;
+            box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+        }
+
+        & .disappear{
+            font-size: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        & .appear{
+            transform: matrix(1, 0, 0, 1, 2000, 0);
+        }
+    }
+
+    & .thread{
+        background: $dullBackground;
+        width: 38%;
+        height: auto;
+        padding: 50px 100px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+        text-align: left;
+
+        & .task{
+            margin-left: 60px;;
+        }
+    }
+    & h4{
+        text-align: center;
+        margin: 20px;
+    }
+
+    & .current{
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+
+}
+
+.show-animation{
+    & .appear{
+        height: 0px;
+        margin-bottom: 0px;
+        opacity: 0;
+    }
+    & .indent{
+        margin-top: 0px;
+    }
+}
+
 .demobox{
     width: 100px;
     height: 100px;

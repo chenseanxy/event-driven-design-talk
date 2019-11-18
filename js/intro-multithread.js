@@ -8,13 +8,11 @@
     Reveal.addEventListener('intro-multithread', () => {
 
         let text = document.getElementById('intro-multithread-text');
-        let text1 = document.getElementById('intro-multithread-innertext1');
-        let text2 = document.getElementById('intro-multithread-innertext2');
+        let indent = document.getElementById('intro-multithread-indent');
 
         timeline.to(text, 1.5, {opacity: 100, ease: Expo.easeInOut, delay: 0.5});
-        timeline.to(text, 1, {height: 49, ease: Expo.easeInOut}, 0);
-        timeline.to([text1, text], 1, {marginTop: 20, marginBottom: 20, ease: Expo.easeInOut}, 0);
-        timeline.to([text1, text2], 1, {marginLeft: 100, ease: Expo.easeInOut}, 0);
+        timeline.to(text, 1, {height: 49, ease: Expo.easeInOut, marginBottom: 20}, 0);
+        timeline.to(indent, 1, {marginTop: 20, marginLeft: 100, ease: Expo.easeInOut}, 0);
 
     }, false);
 

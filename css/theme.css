@@ -317,6 +317,63 @@ container {
   border-radius: 15px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
 
+.left {
+  text-align: left; }
+
+.space {
+  margin-top: 100px; }
+
+.eventloop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 100px !important; }
+  .eventloop .queue {
+    width: 200%;
+    background: #3f3f3f;
+    border-radius: 15px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px 50px;
+    margin-bottom: 50px;
+    display: flex; }
+    .eventloop .queue .item {
+      margin-left: 20px;
+      padding: 20px 40px;
+      background: #dcdcdc;
+      color: #3f3f3f;
+      border-radius: 15px;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+    .eventloop .queue .disappear {
+      font-size: 0;
+      margin: 0;
+      padding: 0; }
+    .eventloop .queue .appear {
+      transform: matrix(1, 0, 0, 1, 2000, 0); }
+  .eventloop .thread {
+    background: #3f3f3f;
+    width: 38%;
+    height: auto;
+    padding: 50px 100px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    text-align: left; }
+    .eventloop .thread .task {
+      margin-left: 60px; }
+  .eventloop h4 {
+    text-align: center;
+    margin: 20px; }
+  .eventloop .current {
+    font-size: 150%;
+    font-weight: bold; }
+
+.show-animation .appear {
+  height: 0px;
+  margin-bottom: 0px;
+  opacity: 0; }
+
+.show-animation .indent {
+  margin-top: 0px; }
+
 .demobox {
   width: 100px;
   height: 100px;

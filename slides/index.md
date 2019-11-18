@@ -1,4 +1,6 @@
 <!-- .slide: class="center" -->
-# Reactor Design Pattern
+# Event-Driven Behavioral Design
+
+### Event Loop & Reactor
 
 Presentation for SA course / Chen Xinyang
