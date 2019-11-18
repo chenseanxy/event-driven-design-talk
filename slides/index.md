@@ -1,6 +1,6 @@
 <!-- .slide: class="center" -->
 # Event-Driven Behavioral Design
 
-### Event Loop & Reactor
+### Event Loop
 
 Presentation for SA course / Chen Xinyang
