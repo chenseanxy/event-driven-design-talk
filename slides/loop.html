@@ -1,0 +1,151 @@
+<section class="center">
+    <h1>Event loop</h1>
+</section>
+
+<section data-state="event-loop-in-action">
+    <h2 style="text-align: left;">Event loop in action</h2>
+    <div class="eventloop">
+        <div class="queue">
+            <h4>Task Queue</h4>
+            <div class="item" id="queuedTimer">Start Timer</div>
+            <div class="item appear" id="queuedCallback">Timer Finished</div>
+        </div>
+        <div class="thread">
+            <h4>Main thread</h4>
+
+            <div class="show-animation">
+                <p id="runTask">1. Run task in task queue</p>
+                <div class="task appear" id="timerTask">
+                    <p id="runInNewThread">1. Run in new thread:</p>
+                    <div class="task">
+                        <p>1. Wait for 5 seconds</p>
+                        <p >2. Schedule a task on main thread:</p>
+                        <div class="task">
+                            <p>1. Invoke Callback</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="task appear" id="callbackTask">
+                    <p class="indent" id="invokeCallback">1. Invoke Callback</p>
+                </div>
+                <p class="indent" id="loopLine1">2. Handle user interaction</p>
+                <p id="loopLine2">3. Render page</p>
+            </div>
+        </div>
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+
+        <div class="thread fragment fade-right" id="newThread">
+            <h4>New thread</h4>
+
+            <p id="threadLine1">1. Wait for 5 seconds</p>
+            <p id="threadLine2">2. Schedule a task:</p>
+            <div class="task">
+                <p>1. Invoke Callback</p>
+            </div>
+        </div>
+
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+        <span class="fragment" data-state="elia"></span>
+
+    </div>
+
+</section>
+
+<section data-state="event-loop-wrap">
+    <h2 style="text-align: left;">What did we achieve here?</h2>
+    <container style="text-align: left; margin-top: 200px; font-size: 120%;">
+        <p>1. Forked off main thread</p>
+        <p>2. Ran <span id="timeConsuming">time-consuming</span> code without blocking - Async</p>
+        <p>3. "Went back" to main thread - Sync</p>
+    </container>
+
+    <container class="left space">
+        <h4>Reduced synchronization problems</h4>
+        <p>Adding a task to the task queue</p>
+        <p>- Standarized</p>
+        <p>- Lower chance: not tasks themselves</p>
+    </container>
+
+    <h2 class="fragment fade" style="margin-top: 150px;">All for a timer?</h2>
+
+    <span class="fragment" data-state="elwp"></span>
+
+</section>
+
+<section>
+    <h2 style="text-align: left;">Requirements of interactive application</h2>
+    <pre><code data-noescape>
+    while True:
+        if not task_queue.empty():
+            task = task_queue.get_task()
+            task.run()
+
+        get_user_input()
+        render()
+    </code></pre>
+
+    <container class="fragment fade-down">
+        <h2>Targeting 60 FPS</h2>
+        <p class="fragment fade-down">60FPS - 16.6ms per frame</p>
+        <p class="fragment fade-down">90FPS - 11.1ms per frame</p>
+        <p class="fragment fade-down">120FPS - 8.3ms per frame</p>
+        <p class="fragment fade-down">144FPS - 6.9ms per frame</p>
+    </container>
+
+</section>
+
+<section>
+    <h2 style="text-align: left;">Web & JavaScript</h2>
+
+    <container class="left space">
+        <h2>Web</h2>
+        <p>HTML + CSS + JS, interpreted & rendered by browser</p>
+        <p>Network intensive</p>
+    </container>
+
+    <container class="left space fragment fade">
+        <h2>JavaScript</h2>
+        <p>A way to run code in browser</p>
+        <p>DOM (Document Object Model)</p>
+        <p>Highly asynchronous, many synchronous operations</p>
+    </container>
+
+</section>
+
+<section>
+    <h2 style="text-align: left;">Event-driven</h2>
+    <pre><code data-noescape>
+    while True:
+        if not task_queue.empty():
+            task = task_queue.get_task()
+            task.run()
+
+        get_user_input()
+        render()
+    </code></pre>
+
+    <container class="space fragment fade" style="font-size: 120%;">
+        <p>Task queue -> Event queue</p>
+        <p>"Queue a task" -> Generate a event of a specific type</p>
+        <p>"Run a task" -> Calling the event-handler for that event</p>
+    </container>
+
+</section>
+
+<section>
+    <h2 style="text-align: left;">Limitations of event loops</h2>
+
+    <container class="left" style="margin-top: 200px; font-size: 120%;">
+        <p>- Bottlenecked by main thread</p>
+        <p>- Event type scaling</p>
+    </container>
+
+</section>
+

@@ -1,0 +1,146 @@
+
+<section class="center">
+    <h1>Introduction</h1>
+    <p>Example: Countdown Timer</p>
+
+</section>
+
+<section>
+    <h2 style="text-align: left;">Introduction</h2>
+    <h2>Simple countdown timer</h2>
+
+    <container style="margin: 100px auto; text-align: left">
+        <p>Behaviour:</p>
+        <p>1. Wait for 5 seconds</p>
+        <p>2. Play a sound</p>
+        <p>3. Change text to "Finished"</p>
+    </container>
+
+    <p class="fragment fade-down">How to implement this?</p>
+
+    <pre class="fragment fade-right"><code data-noescape>
+        time.sleep(5)
+        <span class="fragment fade-right">play_sound()</span>
+        <span class="fragment fade-right">modify_text("Finished")</span>
+    </code></pre>
+
+</section>
+
+<section data-state="intro-blocking">
+    <h2 style="text-align: left;">Introduction</h2>
+
+    <p style="text-align: left; margin: 50px auto;">Naive Implementation: (Main-thread Blocking)</p>
+
+    <pre><code>
+        time.sleep(5)
+        play_sound()
+        modify_text("Finished")
+    </code></pre>
+
+    <container class="fragment fade-down">
+        <p>Demo 1: Blocking Main Thread</p>
+        <button id="el-blocking-btn" type="button">Wait for 5 seconds</button>
+        <button id="el-blocking-reset" type="button">Reset</button>
+        <p id="el-blocking-res">Not started</p>
+    </container>
+
+    <container class="fragment fade-down">
+        <div id="el-blocking-anim" class="demobox"></div>
+        <button id="el-blocking-anim-btn" type="button">Start animation</button>
+        <button id="el-blocking-anim-stop" type="button">Reset</button>
+    </container>
+
+</section>
+
+<section>
+    <h2 style="text-align: left;">Introduction</h2>
+    <h2>Blocking main thread</h2>
+
+    <pre><code>
+        def timer_button_handler():
+            time.sleep(5)
+            play_sound()
+            modify_text("Finished")
+    </code></pre>
+
+    <pre><code>
+        # ...
+        if timer_button.clicked():
+            timer_button_handler()
+        # ...
+
+        render()
+    </code></pre>
+
+    <p class="fragment fade" style="font-size: 120%;">Blocking main thread means blocking user interaction!</p>
+
+</section>
+
+<section>
+    <h2 style="text-align: left;">Introduction</h2>
+    <h2>Callbacks</h2>
+
+    <pre><code data-noescape>
+        time.sleep(5)
+        <span id="intro-callback-text"></span>
+        <span id="intro-callback-innertext1">play_sound()</span>
+        <span id="intro-callback-innertext2">modify_text("Finished")</span>
+    </code></pre>
+
+    <!-- Fragment placeholder for code animation -->
+    <span class="fragment" data-state="intro-callback"></span>
+
+    <container class="fragment fade" style="text-align: left;">
+        <h4>Naive Implementation</h4>
+        <p>1. Run Task</p>
+        <p>2. Invoke Callback</p>
+    </container>
+</section>
+
+<section data-state="intro-multithread">
+    <h2 style="text-align: left;">Introduction</h2>
+    <p style="text-align: left; margin: 50px auto;">Use multi-threading!</p>
+
+    <container style="text-align: left; margin: 300px auto;">
+        <h4>Multithreaded Implementation</h4>
+        <div class="show-animation">
+            <p id="intro-multithread-text" class="appear">1. Do the following in a new thread:</p>
+            <div class="indent" id="intro-multithread-indent">
+                <p>1. Run Task</p>
+                <p>2. Invoke Callback</p>
+            </div>
+        </div>
+
+        <!-- Fragment placeholder for container animation -->
+        <span class="fragment" data-state="intro-multithread"></span>
+    </container>
+
+    <p class="fragment fade">Thread synchorization problems, race conditions, ...</p>
+</section>
+
+<section data-state="intro-reactor">
+    <h2 style="text-align: left;">Introduction</h2>
+    <p style="text-align: left; margin: 50px auto;">Task Queues</p>
+    <h3 style="margin: 50px auto; font-size: 120%">Run all callbacks in the main thread</h3>
+    <container style="text-align: left; margin-top: 100px;">
+        <p>1. Do the following in a new thread:</p>
+        <div class="show-animation" style="margin-left: 100px;">
+                <p>1. Run Task</p>
+                <p id="intro-reactor-text" class="appear">2. Queue a task to run on main thread:</p>
+                <p id="intro-reactor-indent" class="indent">2. Invoke Callback</p>
+        </div>
+    </container>
+
+    <span class="fragment" data-state="intro-reactor"></span>
+
+    <pre class="fragment fade"><code>
+    while True:
+        if not task_queue.empty():
+            task = task_queue.get_task()
+            task.run()
+
+        # Do other stuff, like user interaction, ...
+        get_user_input()
+        render()
+    </code></pre>
+</section>
